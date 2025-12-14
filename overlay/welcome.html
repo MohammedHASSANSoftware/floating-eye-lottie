@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>Hakim Eye</title>
+  <style>
+    body {
+      background: #0b0f14;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    .eye {
+      font-size: 64px;
+      margin-bottom: 20px;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { opacity: .6 }
+      50% { opacity: 1 }
+      100% { opacity: .6 }
+    }
+    button {
+      width: 90%;
+      padding: 15px;
+      margin: 10px 0;
+      font-size: 18px;
+      border-radius: 10px;
+      border: none;
+    }
+    .ok {
+      background: #00c853;
+      color: #000;
+    }
+    .exit {
+      background: #333;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="eye">👁️</div>
+
+  <h2>مرحبًا بك في Hakim Eye</h2>
+
+  <p>
+    العين الذكية تحفظ الرسائل، الصور، الفيديوهات،
+    الملصقات والروابط قبل حذفها.
+    <br><br>
+    جميع البيانات تُحفظ محليًا داخل جهازك فقط.
+    <br>
+    التطبيق غير تابع لواتساب.
+  </p>
+
+  <button class="ok" onclick="accept()">أوافق على الشروط</button>
+  <button class="exit" onclick="exitApp()">خروج</button>
+
+  <script>
+    function accept() {
+      localStorage.setItem("hakim_accept", "yes");
+      window.location.href = "overlay.html";
+    }
+
+    function exitApp() {
+      alert("يجب الموافقة لتفعيل العين");
+    }
+  </script>
+
+</body>
+</html>
