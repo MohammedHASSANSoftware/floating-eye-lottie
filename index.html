@@ -2,22 +2,21 @@
 <html lang="ar">
 <head>
   <meta charset="UTF-8">
-  <title>Hakim Eye – Floating Eye</title>
+  <title>Hakim Eye</title>
 
-  <!-- Lottie Player from CDN -->
-  <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.js"></script>
+  <!-- Lottie Web -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
 
   <style>
     body {
       margin: 0;
-      padding: 0;
-      background: #000;
+      background: black;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
     }
-    dotlottie-player {
+    #eye {
       width: 300px;
       height: 300px;
     }
@@ -25,11 +24,17 @@
 </head>
 <body>
 
-  <dotlottie-player
-    src="dotlottie/eye.lottie"
-    autoplay
-    loop>
-  </dotlottie-player>
+  <div id="eye"></div>
+
+  <script>
+    lottie.loadAnimation({
+      container: document.getElementById("eye"),
+      renderer: "svg",
+      loop: true,
+      autoplay: true,
+      path: "eye/eye.json"
+    });
+  </script>
 
 </body>
 </html>
