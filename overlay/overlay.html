@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>Hakim Eye Overlay</title>
+
+  <!-- مشغل dotLottie -->
+  <script src="https://unpkg.com/@dotlottie/dotlottie-player@latest/dist/dotlottie-player.js"></script>
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: transparent;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    #eye-container {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 90px;
+      height: 90px;
+      z-index: 9999;
+      cursor: pointer;
+    }
+
+    dotlottie-player {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 👁️ العين -->
+  <div id="eye-container">
+    <dotlottie-player
+      id="eyePlayer"
+      src="../dotlottie/eye.lottie"
+      autoplay
+      loop
+      background="transparent">
+    </dotlottie-player>
+  </div>
+
+  <!-- منطق التشغيل -->
+  <script>
+    const eye = document.getElementById("eyePlayer");
+
+    function eyeDeleted() {
+      eye.style.filter = "drop-shadow(0 0 14px red)";
+    }
+
+    function eyeSafe() {
+      eye.style.filter = "drop-shadow(0 0 14px lime)";
+    }
+
+    function eyeIdle() {
+      eye.style.filter = "drop-shadow(0 0 8px cyan)";
+    }
+
+    // عند الضغط على العين
+    document.getElementById("eye-container").onclick = () => {
+      alert("👁️ فتح سلة الرسائل المحذوفة");
+    };
+
+    // تجربة تلقائية (للتأكد أنها تعمل)
+    setTimeout(eyeIdle, 1000);
+    setTimeout(eyeDeleted, 4000);
+    setTimeout(eyeSafe, 9000);
+  </script>
+
+</body>
+</html>
