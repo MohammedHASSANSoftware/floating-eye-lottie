@@ -1,21 +1,23 @@
+<dotlottie-player
+  id="eyePlayer"
+  src="eye.json"
+  background="transparent"
+  speed="1"
+  loop
+  autoplay
+  style="width:180px; height:180px;">
+</dotlottie-player>
 
-<!DOCTYPE html>
-<html lang="ar">
-<head>
-  <meta charset="UTF-8">
-  <title>Floating Eye Preview</title>
-  <script src="https://unpkg.com/@dotlottie/dotlottie-player@latest/dist/dotlottie-player.js"></script>
-</head>
-<body style="background:black; display:flex; justify-content:center; align-items:center; height:100vh;">
+<script>
+  const eye = document.getElementById("eyePlayer");
 
-  <dotlottie-player
-    src="eye.json"
-    background="transparent"
-    speed="1"
-    loop
-    autoplay
-    style="width:180px; height:180px;">
-  </dotlottie-player>
+  // مثال لتغيير الضوء لاحقًا
+  function setEyeState(state) {
+    if(state === "deleted") eye.style.filter = "drop-shadow(0 0 12px red)";
+    if(state === "safe") eye.style.filter = "drop-shadow(0 0 12px lime)";
+  }
 
-</body>
-    </html>
+  // تجربة
+  setTimeout(() => setEyeState("deleted"), 3000);
+  setTimeout(() => setEyeState("safe"), 8000);
+</script>
