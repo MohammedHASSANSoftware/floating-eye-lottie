@@ -1,0 +1,15 @@
+{
+  "animations": [
+    {
+      "id": "eye",
+      "name": "Hakim Eye",
+      "loop": true,
+      "autoplay": true,
+      "speed": 1,
+      "src": "../eye/eye.json"
+    }
+  ],
+  "version": 1,
+  "author": "MH-Software",
+  "description": "Hakim Eye – Floating WhatsApp Assistant"
+}
